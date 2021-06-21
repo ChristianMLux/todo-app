@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 html {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 body {
@@ -11,7 +11,7 @@ body {
 
 main {
   margin: 0 auto;
-  max-width: 50ch;
+  max-width: 35ch;
 }
 
 section {
@@ -26,6 +26,54 @@ section {
   background-color: #b198ec;
 }
 
+.btn {
+  background-color: lightgrey;
+  border: none;
+  color: black;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0.125rem 0.065rem;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.section-add-todo {
+}
+.section-delete {
+  position: relative;
+  left: 0;
+}
+
+.add-todo-input {
+  height: 1.7rem;
+  width: 70%;
+}
+.add-todo-input:target {
+  border-color: darkgreen;
+}
+.todo-box {
+  display: inline-block;
+}
+.add-todo-btn {
+  width: 4.39rem;
+}
+.add-todo-btn:hover {
+  background-color: #4caf50;
+  color: white;
+  transition: 0.5s;
+}
+
+.remove-todo-btn {
+  position: absolute;
+  right: 0rem;
+}
+.remove-todo-btn:hover {
+  background-color: red;
+  color: white;
+  transition: 0.5s;
+}
 .selection-div {
   display: inline-block;
   margin-bottom: 1rem;
@@ -41,21 +89,21 @@ Media
 
 @media screen and (max-width: 768px) {
   html {
-    font-size: 16px;
+    font-size: 18px;
     color: red;
   }
 }
 
 @media screen and (min-width: 769px) {
   html {
-    font-size: 18px;
+    font-size: 20px;
     color: aqua;
   }
 }
 
 @media screen and (min-width: 1024px) {
   html {
-    font-size: 20px;
+    font-size: 22px;
     color: blue;
   }
 }
