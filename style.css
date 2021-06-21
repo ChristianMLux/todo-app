@@ -65,6 +65,10 @@ section {
   transition: 0.5s;
 }
 
+li::after {
+  content: " - checkboxdummy";
+}
+
 .remove-todo-btn {
   position: absolute;
   right: 0rem;
