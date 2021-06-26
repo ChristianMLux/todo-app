@@ -3,14 +3,27 @@
 }
 html {
   font-size: 18px;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
+  --primary-color: #a778db;
+  --primary-var-color: #caaeea;
+  --secondary-color: #acdb76;
+  --background-color: #fafafa;
+  --basic-font-color: #121212;
+  --secondary-font-color: #fafafa;
+  --secondary-bg-color: #121212;
+  --shadow-color: #a0a0a0;
+  --bright-shadow: #c9c9c9;
   margin: 0;
+  background-color: var(--background-color);
+  color: var(--basic-font-color);
 }
 
 main {
   margin: 0 auto;
+  width: 100%;
   max-width: 35ch;
 }
 
@@ -18,12 +31,59 @@ section {
   margin: 0.8rem;
 }
 
+/*GRID*/
+.grid-layout {
+  display: grid;
+  grid-auto-rows: minmax(auto);
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-layout > div {
+  _background-color: aqua;
+  background-size: cover;
+  display: flex;
+  align-items: flex-start;
+  border-bottom: dotted 0.5px var(--primary-color);
+}
+.grid-layout .grid-add-todo {
+  grid-column: 1/-1;
+  grid-row: 1 span;
+  _justify-content: center;
+  align-items: flex-end;
+  display: inline;
+}
+.grid-layout .grid-show-function {
+  grid-row: auto;
+  grid-column: span 2;
+}
+.grid-layout .grid-todo-list {
+  grid-column: span 2;
+  grid-row: auto;
+}
+.grid-layout .grid-delete {
+  grid-column: span 2;
+  grid-row: auto;
+}
+
+.header-wrapper {
+  width: 100%;
+  max-width: 35ch;
+}
 .main-header {
-  position: relative;
-  padding: 3.125rem;
-  padding-bottom: 1rem;
-  text-align: center;
-  background-color: #b198ec;
+  display: flex;
+  justify-content: center;
+}
+
+.main-heading {
+  display: inline-flex;
+  align-items: flex-start;
+  margin: 0;
+  padding-top: 0.5rem;
+}
+
+.sub-heading {
+  display: inline-flex;
+  font-size: 0.9rem;
+  margin: auto;
 }
 
 .btn {
@@ -39,25 +99,70 @@ section {
   transition: 0.5s;
 }
 
+.form-add-todo {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 .section-add-todo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .section-delete {
   position: relative;
   left: 0;
 }
+.grid-delete {
+  display: flex;
+  justify-content: flex-end;
+}
+.grid-show-function {
+  justify-content: center;
+}
 
 .add-todo-input {
+  margin-left: 0;
+  padding-left: 0;
   height: 1.7rem;
-  width: 70%;
+  width: 100%;
 }
 .add-todo-input:target {
   border-color: darkgreen;
 }
-.todo-box {
-  display: inline-block;
+
+.grid-todo-list {
+  justify-content: space-between;
+  font-size: 0.8rem;
 }
+
+.todo-list > li {
+  transition: background-color 0.25s;
+}
+.todo-list > li:nth-child(1n + 1) label,
+.cb {
+  background-color: var(--bright-shadow);
+  transition: background-color 0.25s;
+}
+.todo-list > li:nth-child(2n + 2) label,
+.cb {
+  background-color: var(--shadow-color);
+  transition: background-color 0.25s;
+}
+.todo-list > li:nth-child(1n + 1):hover label,
+.cb {
+  background-color: var(--primary-var-color);
+}
+.todo-list > li:nth-child(2n + 2):hover label,
+.cb {
+  background-color: var(--primary-color);
+}
+
 .add-todo-btn {
   width: 4.39rem;
+  align-self: flex-end;
 }
 .add-todo-btn:hover {
   background-color: #4caf50;
@@ -65,14 +170,6 @@ section {
   transition: 0.5s;
 }
 
-li::after {
-  content: " - checkboxdummy";
-}
-
-.remove-todo-btn {
-  position: absolute;
-  right: 0rem;
-}
 .remove-todo-btn:hover {
   background-color: red;
   color: white;
@@ -80,7 +177,8 @@ li::after {
 }
 .selection-div {
   display: inline-block;
-  margin-bottom: 1rem;
+  font-size: 0.7rem;
+  padding-bottom: 0.5rem;
 }
 .selection-heading {
   display: inline-block;

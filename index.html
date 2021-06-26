@@ -7,7 +7,13 @@
     <meta name="description" content="This app will help you get shit done" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>ToDo-App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,100&display=swap"
+      rel="stylesheet"
+    />
+    <title>ToDorio</title>
   </head>
   <body>
     <header class="main-header">
@@ -17,42 +23,58 @@
       </div>
     </header>
     <main>
-      <section class="section-add-todo">
-        <form class="form-add-todo">
-          <input
-            class="add-todo-input"
-            type="text"
-            id="add-todo"
-            name="add-todo"
-            placeholder="enter your new todo"
-          />
-          <div class="todo-box">
-            <button class="btn add-todo-btn">
-              <span>Add</span>
-            </button>
-          </div>
-        </form>
-      </section>
-      <section class="section-selection">
-        <div class="selection-div">
-          <p class="selection-heading">Show:</p>
-          <label for="selection-radio">all</label>
-          <input type="radio" name="selection-radio" />
-          <label for="selection-radio">open</label>
-          <input type="radio" name="selection-radio" />
-          <label for="selection-radio">closed</label>
-          <input type="radio" name="selection-radio" />
+      <div class="grid-layout">
+        <div class="grid-add-todo">
+          <form class="form-add-todo">
+            <input
+              class="add-todo-input"
+              type="text"
+              id="add-todo"
+              name="add-todo"
+              placeholder="enter your new todo"
+            />
+            <div class="todo-box">
+              <button class="btn add-todo-btn">
+                <span>Add</span>
+              </button>
+            </div>
+          </form>
         </div>
-      </section>
-      <section class="section-todo-list">
-        <ul class="todo-list">
-          <li>This is a todolistitem</li>
-          <li>This is a test</li>
-        </ul>
-      </section>
-      <section class="section-delete">
-        <button class="btn remove-todo-btn">Remove done Todos</button>
-      </section>
+        <div class="grid-show-function">
+          <div class="selection-div">
+            <p class="selection-heading">Show:</p>
+            <label for="selection-radio">all</label>
+            <input type="radio" name="selection-radio" />
+            <label for="selection-radio">open</label>
+            <input type="radio" name="selection-radio" />
+            <label for="selection-radio">closed</label>
+            <input type="radio" name="selection-radio" />
+          </div>
+        </div>
+        <div class="grid-todo-list">
+          <ul class="todo-list">
+            <li>
+              <label for="todo-list-checkbox">ToDoEntry</label>
+              <input class="cb" type="checkbox" name="todo-list-radio" />
+            </li>
+            <li>
+              <label for="todo-list-checkbox">ToDoEntry</label>
+              <input type="checkbox" name="todo-list-radio" />
+            </li>
+            <li>
+              <label for="todo-list-checkbox">ToDoEntry</label>
+              <input type="checkbox" name="todo-list-radio" />
+            </li>
+            <li>
+              <label for="todo-list-checkbox">ToDoEntry</label>
+              <input type="checkbox" name="todo-list-radio" />
+            </li>
+          </ul>
+        </div>
+        <div class="grid-delete">
+          <button class="btn remove-todo-btn">Remove done Todos</button>
+        </div>
+      </div>
     </main>
   </body>
 </html>
